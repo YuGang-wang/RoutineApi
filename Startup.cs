@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -6,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Routine.Api.Data;
 using Routine.Api.Services;
+using System;
 
 namespace Routine.Api
 {
@@ -27,6 +29,8 @@ namespace Routine.Api
             {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
+            // Ìí¼Ó AutoMapper ·þÎñ
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());    
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,6 +1,8 @@
 ﻿namespace Routine.Api.Entities
 {
-    public class Gender
+    public enum Gender
     {
+        男 = 1,
+        女 = 2
     }
 }
